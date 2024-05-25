@@ -2,7 +2,7 @@
 #!desc = 将Google搜索重定向至.com域名，如遇频繁跳转请禁用本插件。
 #!openUrl = 
 #!author = 不是山谷
-#!homepage = https://github.com/S12day00/Loon/tree/main/Plugin
+#!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/Google.png
 #!date = 2023-11-14 14:41:32
 

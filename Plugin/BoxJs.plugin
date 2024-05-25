@@ -2,7 +2,7 @@
 #!desc = JavaScript数据管理器，用于管理脚本储存的数据。使用前请在本插件的详情页面为[PROXY]项分配代理策略。
 #!openUrl = http://boxjs.com
 #!author = chavyleung
-#!homepage = https://github.com/S12day00/Loon/tree/main/Plugin
+#!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/BoxJS.png
 #!date = 2024-04-23 08:28:27
 

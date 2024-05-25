@@ -2,7 +2,7 @@
 #!desc=屏蔽qq空间广告，但是广告位仍存在
 #!openUrl=
 #!author = 不是山谷
-#!homepage = https://github.com/S12day00/Loon/tree/main/Plugin
+#!homepage = https://github.com/S12day00/Loon
 #!icon= https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/QQ.png
 
 [Rule]

@@ -2,7 +2,7 @@
 #!desc = 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
 #!openUrl = 
 #!author = 不是山谷
-#!homepage = https://github.com/S12day00/Loon/tree/main/Plugin
+#!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/HTTPDNS.png
 #!date = 2024-05-16 20:16:26
 

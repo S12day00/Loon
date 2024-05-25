@@ -2,7 +2,7 @@
 #!desc = 过滤Spotify播放广告，移除随机播放，恢复歌手和专辑列表的正常展示。建议重新登录并清除缓存，且音质不能设置为超高，仅建议iOS 15及以上设备使用。
 #!openUrl = 
 #!author = 不是山谷
-#!homepage = https://github.com/S12day00/Loon/tree/main/Plugin
+#!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/Spotify.png
 #!date = 2024-04-28 15:54:48
 
