@@ -114,17 +114,6 @@ URL-REGEX, ^http:\/\/101\.35\.212\.35\/d, REJECT
 URL-REGEX, ^http:\/\/114\.110\.96\.26\/d, REJECT
 URL-REGEX, ^http:\/\/114\.110\.97\.97\/d, REJECT
 
-# 网易
-DOMAIN, httpdns.music.163.com, REJECT
-DOMAIN, httpdns.n.netease.com, REJECT
-DOMAIN, httpdns.yunxindns.com, REJECT
-DOMAIN, lofter.httpdns.c.163.com, REJECT
-DOMAIN, music.httpdns.c.163.com, REJECT
-IP-CIDR, 59.111.239.61/32, REJECT, no-resolve
-IP-CIDR, 59.111.239.62/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.51/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.195/32, REJECT, no-resolve
-
 # 微博
 DOMAIN, dns.weibo.cn, REJECT
 IP-CIDR, 39.97.130.51/32, REJECT, no-resolve
