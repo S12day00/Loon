@@ -4,6 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon= https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/QQ.png
+#!date = 2024-05-25 14:41:32
 
 [Rule]
 DOMAIN,d3g.qq.com,REJECT
