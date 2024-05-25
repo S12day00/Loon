@@ -19,7 +19,7 @@ force-http-engine-hosts = script.hub, *.script.hub
 DOMAIN, scripthub.vercel.app, PROXY
 
 [Script]
-http-request ^https?:\/\/script\.hub\/($|edit\/|reload) script-path = https://gitlab.com/lodepuly/script-hub/-/raw/main/script-hub.js, timeout = 30, tag = 前端界面
+http-request ^https?:\/\/script\.hub\/($|edit\/|reload) script-path = https://github.com/Script-Hub-Org/Script-Hub/main/script-hub.js, timeout = 30, tag = 前端界面
 
 http-request ^https?:\/\/script\.hub\/file\/_start_\/.+type=(?:qx-rewrite|surge-module|loon-plugin|all-module) script-path = https://gitlab.com/lodepuly/script-hub/-/raw/main/Rewrite-Parser.js, timeout = 30, tag = Rewrite转换
 
