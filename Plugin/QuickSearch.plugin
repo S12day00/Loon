@@ -31,4 +31,4 @@
 # ^https:\/\/bing\.com\/\?q=([^&]+).+ 302 https://www.bing.com/search?q=$1
 
 [Mitm]
-hostname = bing.com
+hostname = www.bing.com
