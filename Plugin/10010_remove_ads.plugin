@@ -1,0 +1,16 @@
+#!name = 中国联通去广告
+#!desc = 过滤中国联通应用的开屏广告
+#!openUrl =
+#!author = 不是山谷
+#!homepage = https://github.com/S12day00/Loon
+#!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/10010.png
+#!date = 2024-06-02 14:20:29
+
+[Rule]
+DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
+
+[Rewrite]
+
+[Script]
+
+[Mitm]
