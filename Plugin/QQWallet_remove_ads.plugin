@@ -7,6 +7,10 @@
 #!date = 2024-06-02 14:41:32
 
 [Rule]
+# 手机QQ
+DOMAIN, adsmind.gdtimg.com, REJECT
+DOMAIN, pgdt.gtimg.cn, REJECT
+DOMAIN-SUFFIX, gdt.qq.com, REJECT
 
 [Rewrite]
 # QQ钱包广告 //m.qianbao.qq.com
