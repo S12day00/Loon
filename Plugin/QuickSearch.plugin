@@ -20,14 +20,14 @@
 # bimg = Bing图片搜索
 # 无快捷键则默认使用Bing搜索
 
-^https:\/\/bing\.com\/search\?q=bd\+([^&]+).+ 302 https://www.baidu.com/s?wd=$1
-^https:\/\/bing\.com\/search\?q=bdimg\+([^&]+).+ 302 https://image.baidu.com/search/index?tn=baiduimage&word=$1
-^https:\/\/bing\.com\/search\?q=g\+([^&]+).+ 302 https://www.google.com/search?q=$1
-^https:\/\/bing\.com\/search\?q=gimg\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
-^https:\/\/bing\.com\/search\?q=wk\+([^&]+).+ 302 https://zh.wikipedia.org/wiki/$1
-^https:\/\/bing\.com\/search\?q=qm\+([^&]+).+ 302 https://www.qimai.cn/search/index/country/cn/search/$1
-^https:\/\/bing\.com\/search\?q=gh\+([^&]+).+ 302 https://github.com/search?q=$1
-^https:\/\/bing\.com\/search\?q=bimg\+([^&]+).+ 302 https://www.bing.com/images/search?q=$1
+^https:\/\/www\.bing\.com\/search\?q=bd\+([^&]+).+ 302 https://www.baidu.com/s?wd=$1
+^https:\/\/www\.bing\.com\/search\?q=bdimg\+([^&]+).+ 302 https://image.baidu.com/search/index?tn=baiduimage&word=$1
+^https:\/\/www\.bing\.com\/search\?q=g\+([^&]+).+ 302 https://www.google.com/search?q=$1
+^https:\/\/www\.bing\.com\/search\?q=gimg\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
+^https:\/\/www\.bing\.com\/search\?q=wk\+([^&]+).+ 302 https://zh.wikipedia.org/wiki/$1
+^https:\/\/www\.bing\.com\/search\?q=qm\+([^&]+).+ 302 https://www.qimai.cn/search/index/country/cn/search/$1
+^https:\/\/www\.bing\.com\/search\?q=gh\+([^&]+).+ 302 https://github.com/search?q=$1
+^https:\/\/www\.bing\.com\/search\?q=bimg\+([^&]+).+ 302 https://www.bing.com/images/search?q=$1
 # ^https:\/\/bing\.com\/\?q=([^&]+).+ 302 https://www.bing.com/search?q=$1
 
 [Mitm]
