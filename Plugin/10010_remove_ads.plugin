@@ -7,7 +7,8 @@
 #!date = 2024-06-02 14:20:29
 
 [Rule]
-DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
+DOMAIN, smartad.10010.com, REJECT
+DOMAIN-SUFFIX, ad.10010.com, REJECT
 
 [Rewrite]
 
