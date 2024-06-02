@@ -1,0 +1,13 @@
+#!name=qq钱包去广告
+#!desc=
+#!openUrl=
+#!author = 不是山谷
+#!homepage = https://github.com/S12day00/Loon
+#!icon= https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/QQ.png
+#!date = 2024-05-25 14:41:32
+
+# QQ钱包广告 //m.qianbao.qq.com
+^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getQQshopData\? reject-dict
+^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getGameData\? reject-dict
+# QQ钱包公益广告
+^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getFootData\? reject-dict
