@@ -7,38 +7,38 @@
 #!date = 2024-05-22 00:14:58
 
 [Rule]
-#  微信小程序通用规则
+# 微信小程序通用规则
 DOMAIN, wxsnsdy.wxs.qq.com, REJECT
 DOMAIN, wxsmsdy.video.qq.com, REJECT
 DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
 
-#  收钱吧广告
+# 收钱吧广告
 DOMAIN, ads-shopping.shouqianba.com, REJECT
 
-#  猫眼电影
+# 猫眼电影
 DOMAIN, ad.maoyan.com, REJECT
 
 [Rewrite]
-#  企麦点餐系统
+# 企麦点餐系统
 ^https:\/\/webapi\.qmai\.cn\/web\/catering\/advertising\/ reject-dict
 ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach$ reject
 
-#  交通银行小程序开屏广告 @张军
+# 交通银行小程序开屏广告 @张军
 ^https:\/\/creditcardapp\.bankcomm\.com\/cnsvPmpaMdbcardWeb\/page\/getGuidePageAds reject
 
-#  招行首页横幅广告 @ArthasYZ
+# 招行首页横幅广告 @ArthasYZ
 ^https:\/\/mbmodule-openapi\.paas\.cmbchina\.com\/graphic\/v2\/module\/graphic reject
 
 # 丰巢 @ArthasYZ
 ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage reject
 ^https:\/\/dsp\.fcbox\.com reject
 
-#  中国石油去广告 @张军
-#  中石油去开屏广告发现
+# 中国石油去广告 @张军
+# 中石油去开屏广告发现
 ^https:\/\/app\.95504\.net\/app\/json\/page_ad\/initPageAd\?ver= reject
-#  中油好客e站小程序弹窗广告
+# 中油好客e站小程序弹窗广告
 ^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData reject
-#  中油好客e站小程序底部横幅广告
+# 中油好客e站小程序底部横幅广告
 ^https:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData reject
 
 # 多点 @ArthasYZ
@@ -231,47 +231,47 @@ DOMAIN, ad.maoyan.com, REJECT
 ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds reject-dict
 ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent reject-dict
 
-#  猫眼电影
-#  弹窗广告+横幅广告 # 主机名ad.maoyan.com
+# 猫眼电影
+# 弹窗广告+横幅广告 # 主机名ad.maoyan.com
 ^https:\/\/ad\.maoyan\.com\/api\/position\/detail reject-dict
-#  电竞赛事+热门赛事 # 主机名wx.maoyan.com
+# 电竞赛事+热门赛事 # 主机名wx.maoyan.com
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/api\/mobile\/(hotMatchList|eSportsIps) reject-dict
-#  猫眼放映厅 # 主机名vod-movie.maoyan.com
+# 猫眼放映厅 # 主机名vod-movie.maoyan.com
 ^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json reject-dict
-#  精彩演出
+# 精彩演出
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow reject-dict
-#  七日精选
+# 七日精选
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 reject-dict
-#  今日必抢
+# 今日必抢
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main reject-dict
-#  大咖新动态
+# 大咖新动态
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query reject-dict
-#  为你推荐
+# 为你推荐
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances reject-dict
-#  首页底部推荐 # 主机名api.maoyan.com
+# 首页底部推荐 # 主机名api.maoyan.com
 ^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json reject-dict
-#  演出页面全部拦截
+# 演出页面全部拦截
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail reject-dict
 
-#  途虎养车小程序 @张军
+# 途虎养车小程序 @张军
 ^https:\/\/mkt-gateway\.tuhu\.cn\/mkt-scene-marketing-service\/api\/scene\/queryScheme reject-dict
 
-#  横店电影小程序 @张军
+# 横店电影小程序 @张军
 ^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid= reject-dict
 ^https:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid= reject-dict
 
-#  乐堡潮玩馆小程序
+# 乐堡潮玩馆小程序
 ^https:\/\/tbgapplet\.carlsberg\.asia\/tuborg\/banner\/(loading|index) reject-dict
 
-#  收钱吧小程序 @可莉🅥
+# 收钱吧小程序 @可莉🅥
 ^https:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/ reject
 
-#  顺丰速运+ @可莉🅥
+# 顺丰速运+ @可莉🅥
 ^https:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList reject-dict
 ^https:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo reject-dict
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query reject-dict
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/member(Goods\/pointMallService\/goodsList|Manage\/memberEquity\/queryRecommendEquity|ActLengthy\/fullGiveActivityService\/fullGiveInfo) reject-dict
-#  顺丰速运+ 弹窗广告  @ArthasYZ
+# 顺丰速运+ 弹窗广告  @ArthasYZ
 ^https:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/info-flow\/reconsitution-list reject
 
 # 滴滴代驾 daijia.kuaidadi.com, as.xiaojukeji.com
