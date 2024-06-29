@@ -4,7 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/HTTPDNS.png
-#!date = 2024-05-16 20:16:26
+#!date = 2024-06-29 20:16:26
 
 [Rule]
 # 抖音
@@ -76,8 +76,9 @@ IP-CIDR, 203.107.1.0/24, REJECT, no-resolve
 # 百度
 DOMAIN, httpdns.baidu.com, REJECT
 DOMAIN, httpsdns.baidu.com, REJECT
-URL-REGEX, ^http:\/\/180\.76\.76\.112\/v4\/resolve, REJECT
-URL-REGEX, ^http:\/\/180\.76\.76\.220\/v4\/resolve, REJECT
+URL-REGEX, ^http:\/\/180\.76\.76\.112\/v\d\/, REJECT
+URL-REGEX, ^http:\/\/180\.76\.76\.112\/v\d\/resolve, REJECT
+URL-REGEX, ^http:\/\/180\.76\.76\.220\/v\d\/resolve, REJECT
 
 # 百度智能云
 DOMAIN, httpdns.baidubce.com, REJECT
