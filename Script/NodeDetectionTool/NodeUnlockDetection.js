@@ -28,10 +28,10 @@ let result = {
     "title": '  节点解锁查询',
     "YouTube": '<b>YouTube: </b>检测失败，请重试� ❗️',
     "Netflix": '<b>Netflix: </b>检测失败，请重试 ❗️',
-    "Dazn": "<b>Dazn: </b>检测失败，请重试 ❗️",
-    "Disney": "<b>Disneyᐩ: </b>检测失败，请重试 ❗️",
-    "Paramount" : "<b>Paramountᐩ: </b>检测失败，请重试 ❗️",
-    "Discovery" : "<b>Discoveryᐩ: </b>检测失败，请重试 ❗️",
+    "Dazn": '<b>Dazn: </b>检测失败，请重试 ❗️',
+    "Disney": '<b>Disneyᐩ: </b>检测失败，请重试 ❗️',
+    "Paramount" : '<b>Paramountᐩ: </b>检测失败，请重试 ❗️',
+    "Discovery" : '<b>Discoveryᐩ: </b>检测失败，请重试 ❗️',
 }
 
 let arrow = " ➟ "
@@ -65,21 +65,21 @@ function disneyLocation() {
             body: JSON.stringify({
                 query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }',
                 variables: {
-                  input: {
-                    applicationRuntime: 'chrome',
-                    attributes: {
-                        browserName: 'chrome',
-                        browserVersion: '94.0.4606',
-                        manufacturer: 'microsoft',
-                        model: null,
-                        operatingSystem: 'windows',
-                        operatingSystemVersion: '10.0',
-                        osDeviceIds: [],
+                    input: {
+                        applicationRuntime: 'chrome',
+                        attributes: {
+                            browserName: 'chrome',
+                            browserVersion: '94.0.4606',
+                            manufacturer: 'microsoft',
+                            model: null,
+                            operatingSystem: 'windows',
+                            operatingSystemVersion: '10.0',
+                            osDeviceIds: [],
+                        },
+                        deviceFamily: 'browser',
+                        deviceLanguage: 'en',
+                        deviceProfile: 'windows',
                     },
-                    deviceFamily: 'browser',
-                    deviceLanguage: 'en',
-                    deviceProfile: 'windows',
-                  },
                 },
             }),
         }
@@ -172,28 +172,28 @@ function ytbTest() {
                 result["YouTube"] = "<b>YouTube Premium: </b>检测失败 ❗️";
                 resolve(response.status);
             } else {
-              console.log("YTB request data:" + response.status);
-              if (data.indexOf('Premium is not available in your country') !== -1) {
-                  result["YouTube"] = "<b>YouTube Premium: </b>未支持 🚫"
-                  resolve("YTB test failed");
-              } else if (data.indexOf('Premium is not available in your country') == -1) {
-                  let region = ''
-                  let re = new RegExp('"GL":"(.*?)"', 'gm')
-                  let ret = re.exec(data)
-                  if (ret != null && ret.length === 2) {
-                      region = ret[1]
-                  } else if (data.indexOf('www.google.cn') !== -1) {
-                      region = 'CN'
-                  } else {
-                      region = 'US'
-                  }
-                  console.log("YTB region:" + region);
-                  result["YouTube"] = "<b>YouTube Premium: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
-                  resolve(region);
-              } else {
-                result["YouTube"] = "<b>YouTube Premium: </b>检测超时 🚦";
-                resolve("timeout");
-              }
+                console.log("YTB request data:" + response.status);
+                if (data.indexOf('Premium is not available in your country') !== -1) {
+                    result["YouTube"] = "<b>YouTube Premium: </b>未支持 🚫"
+                    resolve("YTB test failed");
+                } else if (data.indexOf('Premium is not available in your country') == -1) {
+                    let region = ''
+                    let re = new RegExp('"GL":"(.*?)"', 'gm')
+                    let ret = re.exec(data)
+                    if (ret != null && ret.length === 2) {
+                        region = ret[1]
+                    } else if (data.indexOf('www.google.cn') !== -1) {
+                        region = 'CN'
+                    } else {
+                        region = 'US'
+                    }
+                    console.log("YTB region:" + region);
+                    result["YouTube"] = "<b>YouTube Premium: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+                    resolve(region);
+                } else {
+                    result["YouTube"] = "<b>YouTube Premium: </b>检测超时 🚦";
+                    resolve("timeout");
+                }
             }
         })
     })
@@ -244,8 +244,8 @@ function daznTest() {
                 resolve(response.status);
             }
         })
-    }) 
-    
+    })
+
 }
 
 function parmTest() {
@@ -356,7 +356,7 @@ function nfTest() {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
             }
         }
-        
+
         $httpClient.get(params, (errormsg,response,data) => {
             console.log("----------NetFlix--------------");
             if (errormsg) {
@@ -377,14 +377,23 @@ function nfTest() {
                 if (ourl == undefined) {
                     ourl = response.headers['X-Originating-Url']
                 }
-                console.log("X-Originating-URL:" + ourl)
-                let region = ourl.split('/')[3]
-                region = region.split('-')[0];
-                if (region == 'title') {
-                    region = 'us'
+                if (ourl == undefined) {
+                    ourl = response.headers['x-originating-url']
                 }
-                result["Netflix"] = "<b>Netflix: </b>完整支持"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
-                resolve(region);
+                if (ourl == undefined) {
+                    console.log("未知地区")
+                    result["Netflix"] = "<b>Netflix: </b>完整支持"+arrow+ "⟦未知地区⟧ 🎉"
+                    resolve(region);
+                } else {
+                    console.log("X-Originating-URL:" + ourl)
+                    let region = ourl.split('/')[3]
+                    region = region.split('-')[0];
+                    if (region == 'title') {
+                        region = 'us'
+                    }
+                    result["Netflix"] = "<b>Netflix: </b>完整支持"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+                    resolve(region);
+                }
             } else {
                 result["Netflix"] = "<b>Netflix: </b>检测失败 ❗️";
                 resolve(response.status)
@@ -411,7 +420,7 @@ function gptTest() {
                 // resolve(errormsg);
                 resolve("不支持 ChatGPT")
                 return;
-            } 
+            }
             let resp = JSON.stringify(data)
             console.log("ChatGPT Main Test")
             let jdg = resp.indexOf("text/plain")
