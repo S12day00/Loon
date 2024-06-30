@@ -4,7 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/WeixinMiniPrograms.png
-#!date = 2024-05-22 00:14:58
+#!date = 2024-06-30 22:28:58
 
 [Rule]
 # 微信小程序通用规则
@@ -19,9 +19,11 @@ DOMAIN, ads-shopping.shouqianba.com, REJECT
 DOMAIN, ad.maoyan.com, REJECT
 
 [Rewrite]
-# 企麦点餐系统
+# 企迈点单系统
 ^https:\/\/webapi\.qmai\.cn\/web\/catering\/advertising\/ reject-dict
-^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach$ reject
+^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach reject
+# 挪瓦咖啡 webapi.qmai.cn
+^https:\/\/images\.qmai\.cn\/s214925\/2023 reject-dict
 
 # 交通银行小程序开屏广告 @张军
 ^https:\/\/creditcardapp\.bankcomm\.com\/cnsvPmpaMdbcardWeb\/page\/getGuidePageAds reject
@@ -127,7 +129,7 @@ DOMAIN, ad.maoyan.com, REJECT
 # 滴滴出行 common.diditaxi.com.cn, capis*.didapinche.com
 ^https:\/\/capis(-\d)?\.didapinche\.com\/adbase reject
 
-# 滴滴打车 conf.diditaxi.com.cn 
+# 滴滴打车 conf.diditaxi.com.cn
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core reject-dict
 
 # 中通快递 @ArthasYZ
@@ -212,9 +214,6 @@ DOMAIN, ad.maoyan.com, REJECT
 # M Stand api.prod.dj.mstand.cn, api.prod.dj.mstand.cn
 ^https:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/app\/mdm\/index\/listAdv\?types reject-dict
 
-# 挪瓦咖啡 webapi.qmai.cn
-^https:\/\/images\.qmai\.cn\/s214925\/2023 reject-dict
-
 # 首汽约车 gw-passenger-wap.01zhuanche.com
 ^https:\/\/gw-passenger-wap\.01zhuanche\.com\/gw-passenger-wap\/zhuanche-passenger-token\/commonSkipToken\/common\/getAdList reject-dict
 
@@ -279,6 +278,9 @@ DOMAIN, ad.maoyan.com, REJECT
 ^https:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe reject-dict
 
 [Script]
+# 企迈点单系统 webapi.qmai.cn, images.qmai.cn
+http-response ^https:\/\/webapi\.qmai\.cn\/web\/catering\/design\/homePage-Config script-path = https://raw.githubusercontent.com/S12day00/Loon/main/Script/WexinMiniPrograms/kff/kff.js, requires-body = true, tag = 企迈点单系统去广告
+
 # EMS中国邮政物流速递 @TEAXS ump.ems.com.cn
 http-response ^https:\/\/ump\.ems\.com\.cn\/new-generation-extend\/redis\/pageInfoByChannel script-path = https://raw.githubusercontent.com/S12day00/Loon/main/Script/WexinMiniPrograms/ems/ems.js, requires-body = true, tag = EMS中国邮政物流速递去广告
 
@@ -308,9 +310,6 @@ http-response ^https:\/\/cappapi\.alittle-tea\.com\/open\?method=catering\.set\.
 
 # M Stand api.prod.dj.mstand.cn, api.prod.dj.mstand.cn
 http-response ^https:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/mini\/app\/index\/info script-path = https://raw.githubusercontent.com/S12day00/Loon/main/Script/WexinMiniPrograms/M_Stand/M_Stand.js, requires-body = true, tag = M Stand去广告
-
-# 挪瓦咖啡 webapi.qmai.cn, images.qmai.cn
-http-response ^https:\/\/webapi\.qmai\.cn\/web\/catering\/design\/homePage-Config script-path = https://raw.githubusercontent.com/S12day00/Loon/main/Script/WexinMiniPrograms/kff/kff.js, requires-body = true, tag = 挪瓦咖啡去广告
 
 # T3出行 passenger.t3go.cn
 http-response ^https:\/\/passenger\.t3go\.cn\/(solution\-|common\-)?(passenger\-)?(activity\-|app\-)?api\/notoken\/(trip\/)?api\/(home\/|common\/)?(v[1-3]\/)?(ad\/getNegativescreen|solution\/passenger\/open\/getHomeMenu|leftmenu|getHomeInfoGlobal) script-path = https://raw.githubusercontent.com/S12day00/Loon/main/Script/WexinMiniPrograms/T3/T3.js, requires-body = true, tag = T3出行去广告

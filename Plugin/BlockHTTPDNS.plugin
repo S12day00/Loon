@@ -4,7 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/HTTPDNS.png
-#!date = 2024-06-29 20:16:26
+#!date = 2024-06-30 22:26:26
 
 [Rule]
 # 抖音
@@ -30,6 +30,7 @@ AND, ((IP-CIDR, 220.243.141.0/32, no-resolve), (DEST-PORT, 6443)), REJECT
 # 微信
 DOMAIN, dns.weixin.qq.com, REJECT
 DOMAIN, dns.weixin.qq.com.cn, REJECT
+DOMAIN, aedns.weixin.qq.com, REJECT
 IP-CIDR, 42.187.182.106/32, REJECT, no-resolve
 IP-CIDR, 42.187.182.123/32, REJECT, no-resolve
 IP-CIDR, 42.187.184.154/32, REJECT, no-resolve
