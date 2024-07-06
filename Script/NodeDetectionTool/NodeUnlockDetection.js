@@ -22,7 +22,7 @@ const Google_BASE_URL = 'https://www.google.com/maps/timeline'
 var inputParams = $environment.params;
 var nodeName = inputParams.node;
 
-let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦🇫" ] , [ "AI" , "🇦🇮" ] , [ "AL" , "🇦🇱" ] , [ "AM" , "🇦🇲" ] , [ "AQ" , "🇦🇶" ] , [ "AR" , "🇦🇷" ] , [ "AS" , "🇦🇸" ] , [ "AT" , "🇦🇹" ] , [ "AU" , "🇦🇺" ] , [ "AW" , "🇦🇼" ] , [ "AX" , "🇦🇽" ] , [ "AZ" , "🇦🇿" ] , ["BA", "🇧🇦"], [ "BB" , "🇧🇧" ] , [ "BD" , "🇧🇩" ] , [ "BE" , "🇧🇪" ] , [ "BF" , "🇧🇫" ] , [ "BG" , "🇧🇬" ] , [ "BH" , "🇧🇭" ] , [ "BI" , "🇧🇮" ] , [ "BJ" , "🇧🇯" ] , [ "BM" , "🇧🇲" ] , [ "BN" , "🇧🇳" ] , [ "BO" , "🇧🇴" ] , [ "BR" , "🇧🇷" ] , [ "BS" , "🇧🇸" ] , [ "BT" , "🇧🇹" ] , [ "BV" , "🇧🇻" ] , [ "BW" , "🇧🇼" ] , [ "BY" , "🇧🇾" ] , [ "BZ" , "🇧🇿" ] , [ "CA" , "🇨🇦" ] , [ "CF" , "🇨🇫" ] , [ "CH" , "🇨🇭" ] , [ "CK" , "🇨🇰" ] , [ "CL" , "🇨🇱" ] , [ "CM" , "🇨🇲" ] , [ "CN" , "🇨🇳" ] , [ "CO" , "🇨🇴" ] , [ "CP" , "🇨🇵" ] , [ "CR" , "🇨🇷" ] , [ "CU" , "🇨🇺" ] , [ "CV" , "🇨🇻" ] , [ "CW" , "🇨🇼" ] , [ "CX" , "🇨🇽" ] , [ "CY" , "🇨🇾" ] , [ "CZ" , "🇨🇿" ] , [ "DE" , "🇩🇪" ] , [ "DG" , "🇩🇬" ] , [ "DJ" , "🇩🇯" ] , [ "DK" , "🇩🇰" ] , [ "DM" , "🇩🇲" ] , [ "DO" , "🇩🇴" ] , [ "DZ" , "🇩🇿" ] , [ "EA" , "🇪🇦" ] , [ "EC" , "🇪🇨" ] , [ "EE" , "🇪🇪" ] , [ "EG" , "🇪🇬" ] , [ "EH" , "🇪🇭" ] , [ "ER" , "🇪🇷" ] , [ "ES" , "🇪🇸" ] , [ "ET" , "🇪🇹" ] , [ "EU" , "🇪🇺" ] , [ "FI" , "🇫🇮" ] , [ "FJ" , "🇫🇯" ] , [ "FK" , "🇫🇰" ] , [ "FM" , "🇫🇲" ] , [ "FO" , "🇫�" ] , [ "FR" , "🇫🇷" ] , [ "GA" , "🇬🇦" ] , [ "GB" , "🇬🇧" ] , [ "HK" , "🇭🇰" ] ,["HU","🇭🇺"], [ "ID" , "🇮🇩" ] , [ "IE" , "🇮🇪" ] , [ "IL" , "🇮🇱" ] , [ "IM" , "🇮🇲" ] , [ "IN" , "🇮🇳" ] , [ "IS" , "🇮🇸" ] , [ "IT" , "🇮🇹" ] , [ "JP" , "🇯🇵" ] , [ "KR" , "🇰🇷" ] , [ "LU" , "🇱🇺" ] , [ "MO" , "🇲🇴" ] , [ "MX" , "🇲🇽" ] , [ "MY" , "🇲🇾" ] , [ "NL" , "🇳🇱" ] , [ "PH" , "🇵🇭" ] , [ "RO" , "🇷🇴" ] , [ "RS" , "🇷🇸" ] , [ "RU" , "🇷🇺" ] , [ "RW" , "🇷🇼" ] , [ "SA" , "🇸🇦" ] , [ "SB" , "��🇧" ] , [ "SC" , "🇸🇨" ] , [ "SD" , "🇸🇩" ] , [ "SE" , "🇸🇪" ] , [ "SG" , "🇸🇬" ] , [ "TH" , "🇹🇭" ] , [ "TN" , "🇹🇳" ] , [ "TO" , "🇹🇴" ] , [ "TR" , "🇹🇷" ] , [ "TV" , "🇹🇻" ] , [ "TW" , "🇨🇳" ] , [ "UK" , "🇬🇧" ] , [ "UM" , "🇺🇲" ] , [ "US" , "🇺🇸" ] , [ "UY" , "🇺🇾" ] , [ "UZ" , "🇺🇿" ] , [ "VA" , "🇻🇦" ] , [ "VE" , "🇻🇪" ] , [ "VG" , "🇻🇬" ] , [ "VI" , "🇻🇮" ] , [ "VN" , "🇻🇳" ] , [ "ZA" , "🇿🇦"]])
+let flags = new Map([["AC", "🇦🇨"], ["AE", "🇦🇪"], ["AF", "🇦🇫"], ["AI", "🇦🇮"], ["AL", "🇦🇱"], ["AM", "🇦🇲"], ["AQ", "🇦🇶"], ["AR", "🇦🇷"], ["AS", "🇦🇸"], ["AT", "🇦🇹"], ["AU", "🇦🇺"], ["AW", "🇦🇼"], ["AX", "🇦🇽"], ["AZ", "🇦🇿"], ["BA", "🇧🇦"], ["BB", "🇧🇧"], ["BD", "🇧🇩"], ["BE", "🇧🇪"], ["BF", "🇧🇫"], ["BG", "🇧🇬"], ["BH", "🇧🇭"], ["BI", "🇧🇮"], ["BJ", "🇧🇯"], ["BM", "🇧🇲"], ["BN", "🇧🇳"], ["BO", "🇧🇴"], ["BR", "🇧🇷"], ["BS", "🇧🇸"], ["BT", "🇧🇹"], ["BV", "🇧🇻"], ["BW", "🇧🇼"], ["BY", "🇧🇾"], ["BZ", "🇧🇿"], ["CA", "🇨🇦"], ["CF", "🇨🇫"], ["CH", "🇨🇭"], ["CK", "🇨🇰"], ["CL", "🇨🇱"], ["CM", "🇨🇲"], ["CN", "🇨🇳"], ["CO", "🇨🇴"], ["CP", "🇨🇵"], ["CR", "🇨🇷"], ["CU", "🇨🇺"], ["CV", "🇨🇻"], ["CW", "🇨🇼"], ["CX", "🇨🇽"], ["CY", "🇨🇾"], ["CZ", "🇨🇿"], ["DE", "🇩🇪"], ["DG", "🇩🇬"], ["DJ", "🇩🇯"], ["DK", "🇩🇰"], ["DM", "🇩🇲"], ["DO", "🇩🇴"], ["DZ", "🇩🇿"], ["EA", "🇪🇦"], ["EC", "🇪🇨"], ["EE", "🇪🇪"], ["EG", "🇪🇬"], ["EH", "🇪🇭"], ["ER", "🇪🇷"], ["ES", "🇪🇸"], ["ET", "🇪🇹"], ["EU", "🇪🇺"], ["FI", "🇫🇮"], ["FJ", "🇫🇯"], ["FK", "🇫🇰"], ["FM", "🇫🇲"], ["FO", "🇫�"], ["FR", "🇫🇷"], ["GA", "🇬🇦"], ["GB", "🇬🇧"], ["HK", "🇭🇰"], ["HU", "🇭🇺"], ["ID", "🇮🇩"], ["IE", "🇮🇪"], ["IL", "🇮🇱"], ["IM", "🇮🇲"], ["IN", "🇮🇳"], ["IS", "🇮🇸"], ["IT", "🇮🇹"], ["JP", "🇯🇵"], ["KR", "🇰🇷"], ["LU", "🇱🇺"], ["MO", "🇲🇴"], ["MX", "🇲🇽"], ["MY", "🇲🇾"], ["NL", "🇳🇱"], ["PH", "🇵🇭"], ["RO", "🇷🇴"], ["RS", "🇷🇸"], ["RU", "🇷🇺"], ["RW", "🇷🇼"], ["SA", "🇸🇦"], ["SB", "��🇧"], ["SC", "🇸🇨"], ["SD", "🇸🇩"], ["SE", "🇸🇪"], ["SG", "🇸🇬"], ["TH", "🇹🇭"], ["TN", "🇹🇳"], ["TO", "🇹🇴"], ["TR", "🇹🇷"], ["TV", "🇹🇻"], ["TW", "🇨🇳"], ["UK", "🇬🇧"], ["UM", "🇺🇲"], ["US", "🇺🇸"], ["UY", "🇺🇾"], ["UZ", "🇺🇿"], ["VA", "🇻🇦"], ["VE", "🇻🇪"], ["VG", "🇻🇬"], ["VI", "🇻🇮"], ["VN", "🇻🇳"], ["ZA", "🇿🇦"]])
 
 let result = {
     "title": '  节点解锁查询',
@@ -30,24 +30,24 @@ let result = {
     "Netflix": '<b>Netflix: </b>检测失败，请重试 ❗️',
     "Dazn": "<b>Dazn: </b>检测失败，请重试 ❗️",
     "Disney": "<b>Disneyᐩ: </b>检测失败，请重试 ❗️",
-    "Paramount" : "<b>Paramountᐩ: </b>检测失败，请重试 ❗️",
-    "Discovery" : "<b>Discoveryᐩ: </b>检测失败，请重试 ❗️",
+    "Paramount": "<b>Paramountᐩ: </b>检测失败，请重试 ❗️",
+    "Discovery": "<b>Discoveryᐩ: </b>检测失败，请重试 ❗️",
 }
 
 let arrow = " ➟ "
 
-Promise.all([ytbTest(),disneyLocation(),nfTest(),daznTest(),parmTest(),discoveryTest(),gptTest()]).then(value => {
-    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["YouTube"]]).join("</br></br>")
-    content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
-    content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
+Promise.all([ytbTest(), disneyLocation(), nfTest(), daznTest(), parmTest(), discoveryTest(), gptTest()]).then(value => {
+    let content = "------------------------------------</br>" + ([result["Dazn"], result["Discovery"], result["Paramount"], result["Disney"], result["Netflix"], result["ChatGPT"], result["YouTube"]]).join("</br></br>")
+    content = content + "</br>------------------------------------</br>" + "<font color=#CD5C5C>" + "<b>节点</b> ➟ " + nodeName + "</font>"
+    content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     console.log(content);
-    $done({"title":result["title"],"htmlMessage":content})
-}).catch (values => {
+    $done({"title": result["title"], "htmlMessage": content})
+}).catch(values => {
     console.log("reject:" + values);
-    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["YouTube"]]).join("</br></br>")
-    content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
-    content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
-    $done({"title":result["title"],"htmlMessage":content})
+    let content = "------------------------------------</br>" + ([result["Dazn"], result["Discovery"], result["Paramount"], result["Disney"], result["Netflix"], result["ChatGPT"], result["YouTube"]]).join("</br></br>")
+    content = content + "</br>------------------------------------</br>" + "<font color=#CD5C5C>" + "<b>节点</b> ➟ " + nodeName + "</font>"
+    content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
+    $done({"title": result["title"], "htmlMessage": content})
 })
 
 function disneyLocation() {
@@ -83,7 +83,7 @@ function disneyLocation() {
                 },
             }),
         }
-        $httpClient.post(params, (errormsg,response,data) => {
+        $httpClient.post(params, (errormsg, response, data) => {
             console.log("----------disney--------------");
             if (errormsg) {
                 result["Discovery"] = "<b>Disneyᐩ:</b>检测失败 ❗️";
@@ -96,14 +96,14 @@ function disneyLocation() {
                 if (resData?.extensions?.sdk?.session != null) {
                     let {
                         inSupportedLocation,
-                        location: { countryCode },
+                        location: {countryCode},
                     } = resData?.extensions?.sdk?.session
                     if (inSupportedLocation == false) {
-                        result["Disney"] = "<b>Disneyᐩ:</b> 即将登陆 ➟ "+'⟦'+flags.get(countryCode.toUpperCase())+"⟧ ⚠️"
+                        result["Disney"] = "<b>Disneyᐩ:</b> 即将登陆 ➟ " + '⟦' + flags.get(countryCode.toUpperCase()) + "⟧ ⚠️"
                         resolve();
                     } else {
-                        result["Disney"] = "<b>Disneyᐩ:</b> 支持 ➟ "+'⟦'+flags.get(countryCode.toUpperCase())+"⟧ 🎉"
-                        resolve({ inSupportedLocation, countryCode });
+                        result["Disney"] = "<b>Disneyᐩ:</b> 支持 ➟ " + '⟦' + flags.get(countryCode.toUpperCase()) + "⟧ 🎉"
+                        resolve({inSupportedLocation, countryCode});
                     }
                 } else {
                     result["Disney"] = "<b>Disneyᐩ:</b> 未支持 🚫 ";
@@ -128,7 +128,7 @@ function disneyHomePage() {
                 'User-Agent': UA,
             }
         }
-        $httpClient.get(params, (errormsg,response,data) => {
+        $httpClient.get(params, (errormsg, response, data) => {
             if (errormsg) {
                 resolve(errormsg);
                 return;
@@ -160,7 +160,7 @@ function ytbTest() {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
         }
-        $httpClient.get(params, (errormsg,response,data) => {
+        $httpClient.get(params, (errormsg, response, data) => {
             console.log("----------YTB--------------");
             if (errormsg) {
                 console.log("YTB request failed:" + errormsg);
@@ -188,7 +188,7 @@ function ytbTest() {
                         region = 'US'
                     }
                     console.log("YTB region:" + region);
-                    result["YouTube"] = "<b>YouTube Premium: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+                    result["YouTube"] = "<b>YouTube Premium: </b>支持 " + arrow + "⟦" + flags.get(region.toUpperCase()) + "⟧ 🎉"
                     resolve(region);
                 } else {
                     result["YouTube"] = "<b>YouTube Premium: </b>检测超时 🚦";
@@ -201,7 +201,7 @@ function ytbTest() {
 
 function daznTest() {
     return new Promise((resolve, reject) => {
-        const extra =`{
+        const extra = `{
             "LandingPageKey":"generic",
             "Platform":"web",
             "PlatformAttributes":{},
@@ -219,7 +219,7 @@ function daznTest() {
             },
             body: extra
         };
-        $httpClient.post(params, (errormsg,response,data) => {
+        $httpClient.post(params, (errormsg, response, data) => {
             console.log("----------DAZN--------------");
             if (errormsg) {
                 console.log("Dazn request error:" + errormsg);
@@ -234,7 +234,7 @@ function daznTest() {
                 let ret = re.exec(data)
                 if (ret != null && ret.length === 2) {
                     region = ret[1];
-                    result["Dazn"] = "<b>Dazn: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉";
+                    result["Dazn"] = "<b>Dazn: </b>支持 " + arrow + "⟦" + flags.get(region.toUpperCase()) + "⟧ 🎉";
                 } else {
                     result["Dazn"] = "<b>Dazn: </b>未支持 🚫";
                 }
@@ -258,7 +258,7 @@ function parmTest() {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
         }
-        $httpClient.get(params, (errormsg,response,data) => {
+        $httpClient.get(params, (errormsg, response, data) => {
             console.log("----------PARAM--------------");
             if (errormsg) {
                 console.log("Param request error:" + errormsg);
@@ -291,7 +291,7 @@ function discoveryTest() {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
         }
-        $httpClient.get(params, (errormsg,response,data) => {
+        $httpClient.get(params, (errormsg, response, data) => {
             if (errormsg) {
                 console.log("Discovery token request error:" + errormsg);
                 resolve(errormsg);
@@ -302,7 +302,7 @@ function discoveryTest() {
                 console.log("discovery_token request result:" + data);
                 let d = JSON.parse(data);
                 let token = d["data"]["attributes"]["token"];
-                const cookievalid =`_gcl_au=1.1.858579665.1632206782; _rdt_uuid=1632206782474.6a9ad4f2-8ef7-4a49-9d60-e071bce45e88; _scid=d154b864-8b7e-4f46-90e0-8b56cff67d05; _pin_unauth=dWlkPU1qWTRNR1ZoTlRBdE1tSXdNaTAwTW1Nd0xUbGxORFV0WWpZMU0yVXdPV1l6WldFeQ; _sctr=1|1632153600000; aam_fw=aam%3D9354365%3Baam%3D9040990; aam_uuid=24382050115125439381416006538140778858; st=${token}; gi_ls=0; _uetvid=a25161a01aa711ec92d47775379d5e4d; AMCV_BC501253513148ED0A490D45%40AdobeOrg=-1124106680%7CMCIDTS%7C18894%7CMCMID%7C24223296309793747161435877577673078228%7CMCAAMLH-1633011393%7C9%7CMCAAMB-1633011393%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1632413793s%7CNONE%7CvVersion%7C5.2.0; ass=19ef15da-95d6-4b1d-8fa2-e9e099c9cc38.1632408400.1632406594`;
+                const cookievalid = `_gcl_au=1.1.858579665.1632206782; _rdt_uuid=1632206782474.6a9ad4f2-8ef7-4a49-9d60-e071bce45e88; _scid=d154b864-8b7e-4f46-90e0-8b56cff67d05; _pin_unauth=dWlkPU1qWTRNR1ZoTlRBdE1tSXdNaTAwTW1Nd0xUbGxORFV0WWpZMU0yVXdPV1l6WldFeQ; _sctr=1|1632153600000; aam_fw=aam%3D9354365%3Baam%3D9040990; aam_uuid=24382050115125439381416006538140778858; st=${token}; gi_ls=0; _uetvid=a25161a01aa711ec92d47775379d5e4d; AMCV_BC501253513148ED0A490D45%40AdobeOrg=-1124106680%7CMCIDTS%7C18894%7CMCMID%7C24223296309793747161435877577673078228%7CMCAAMLH-1633011393%7C9%7CMCAAMB-1633011393%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1632413793s%7CNONE%7CvVersion%7C5.2.0; ass=19ef15da-95d6-4b1d-8fa2-e9e099c9cc38.1632408400.1632406594`;
 
                 let p = {
                     url: Discovery_BASE_URL,
@@ -357,7 +357,7 @@ function nfTest() {
             }
         }
 
-        $httpClient.get(params, (errormsg,response,data) => {
+        $httpClient.get(params, (errormsg, response, data) => {
             console.log("----------NetFlix--------------");
             if (errormsg) {
                 console.log("NF request failed: " + errormsg);
@@ -382,7 +382,7 @@ function nfTest() {
                 }
                 if (ourl == undefined) {
                     console.log("未知地区")
-                    result["Netflix"] = "<b>Netflix: </b>完整支持"+arrow+ "⟦未知地区⟧ 🎉"
+                    result["Netflix"] = "<b>Netflix: </b>完整支持" + arrow + "⟦未知地区⟧ 🎉"
                     resolve(region);
                 } else {
                     console.log("X-Originating-URL:" + ourl)
@@ -391,7 +391,7 @@ function nfTest() {
                     if (region == 'title') {
                         region = 'us'
                     }
-                    result["Netflix"] = "<b>Netflix: </b>完整支持"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+                    result["Netflix"] = "<b>Netflix: </b>完整支持" + arrow + "⟦" + flags.get(region.toUpperCase()) + "⟧ 🎉"
                     resolve(region);
                 }
             } else {
@@ -403,7 +403,7 @@ function nfTest() {
 }
 
 //chatgpt
-support_countryCodes=["T1","XX","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BD","BB","BE","BZ","BJ","BT","BA","BW","BR","BG","BF","CV","CA","CL","CO","KM","CR","HR","CY","DK","DJ","DM","DO","EC","SV","EE","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KW","KG","LV","LB","LS","LR","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PA","PG","PE","PH","PL","PT","QA","RO","RW","KN","LC","VC","WS","SM","ST","SN","RS","SC","SL","SG","SK","SI","SB","ZA","ES","LK","SR","SE","CH","TH","TG","TO","TT","TN","TR","TV","UG","AE","US","UY","VU","ZM","BO","BN","CG","CZ","VA","FM","MD","PS","KR","TW","TZ","TL","GB"]
+support_countryCodes = ["T1", "XX", "AL", "DZ", "AD", "AO", "AG", "AR", "AM", "AU", "AT", "AZ", "BS", "BD", "BB", "BE", "BZ", "BJ", "BT", "BA", "BW", "BR", "BG", "BF", "CV", "CA", "CL", "CO", "KM", "CR", "HR", "CY", "DK", "DJ", "DM", "DO", "EC", "SV", "EE", "FJ", "FI", "FR", "GA", "GM", "GE", "DE", "GH", "GR", "GD", "GT", "GN", "GW", "GY", "HT", "HN", "HU", "IS", "IN", "ID", "IQ", "IE", "IL", "IT", "JM", "JP", "JO", "KZ", "KE", "KI", "KW", "KG", "LV", "LB", "LS", "LR", "LI", "LT", "LU", "MG", "MW", "MY", "MV", "ML", "MT", "MH", "MR", "MU", "MX", "MC", "MN", "ME", "MA", "MZ", "MM", "NA", "NR", "NP", "NL", "NZ", "NI", "NE", "NG", "MK", "NO", "OM", "PK", "PW", "PA", "PG", "PE", "PH", "PL", "PT", "QA", "RO", "RW", "KN", "LC", "VC", "WS", "SM", "ST", "SN", "RS", "SC", "SL", "SG", "SK", "SI", "SB", "ZA", "ES", "LK", "SR", "SE", "CH", "TH", "TG", "TO", "TT", "TN", "TR", "TV", "UG", "AE", "US", "UY", "VU", "ZM", "BO", "BN", "CG", "CZ", "VA", "FM", "MD", "PS", "KR", "TW", "TZ", "TL", "GB"]
 
 function gptTest() {
     return new Promise((resolve, reject) => {
@@ -412,7 +412,7 @@ function gptTest() {
             node: nodeName,
             timeout: 5000, //ms
         }
-        $httpClient.get(params, (errormsg,response,data) => {
+        $httpClient.get(params, (errormsg, response, data) => {
             console.log("----------GPT--------------");
             if (errormsg) {
                 console.log("GPT request failed:!!! " + errormsg);
@@ -441,10 +441,10 @@ function gptTest() {
 
                     console.log("ChatGPT Region Test")
                     let region = resData.split("loc=")[1].split("\n")[0]
-                    console.log("ChatGPT Region: "+region)
+                    console.log("ChatGPT Region: " + region)
                     let res = support_countryCodes.indexOf(region)
                     if (res != -1) {
-                        result["ChatGPT"] = "<b>ChatGPT: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+                        result["ChatGPT"] = "<b>ChatGPT: </b>支持 " + arrow + "⟦" + flags.get(region.toUpperCase()) + "⟧ 🎉"
                         console.log("支持 ChatGPT")
                         resolve(region)
                     } else {
@@ -469,17 +469,17 @@ function googleToCN() {
             url: Google_BASE_URL,
             node: nodeName,
             timeout: 3000, //ms
-            headers:{
-                'Accept-Encoding' : `gzip, deflate, br`,
-                'Connection' : `keep-alive`,
-                'Accept' : `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`,
-                'Host' : `www.google.com`,
-                'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1`,
-                'Accept-Language' : `zh-CN,zh-Hans;q=0.9`
+            headers: {
+                'Accept-Encoding': `gzip, deflate, br`,
+                'Connection': `keep-alive`,
+                'Accept': `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`,
+                'Host': `www.google.com`,
+                'User-Agent': `Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1`,
+                'Accept-Language': `zh-CN,zh-Hans;q=0.9`
             }
         }
 
-        $httpClient.get(params, (errormsg,response,data) => {
+        $httpClient.get(params, (errormsg, response, data) => {
             console.log("----------Google2CN--------------");
             if (errormsg) {
                 console.log("Google2CN request failed:" + errormsg);

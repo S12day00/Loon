@@ -6,9 +6,9 @@
 
 如Quantumult X的重写：
 https://service.ilovepdf.com/v1/user url response-body false response-body true
-   
+
 可改写为Loon的脚本复写：
-[Script] 
+[Script]
 http-response https://service.ilovepdf.com/v1/user requires-body=true, script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/CommonScript/replace-body.js, argument = false->true
 
 argument=要匹配值=作为替换的值
@@ -23,39 +23,39 @@ argument=要匹配值=作为替换的值
 argument=("key")\s?:\s?"(.+?)"->$1: "new_value"
 
 s修饰符可以让.匹配换行符，如argument=/.+/s->hello
-  
+
 */
 
 function getRegexp(re_str) {
-	let regParts = re_str.match(/^\/(.*?)\/([gims]*)$/);
-	if (regParts) {
-		return new RegExp(regParts[1], regParts[2]);
-	} else {
-		return new RegExp(re_str);
-	}
+    let regParts = re_str.match(/^\/(.*?)\/([gims]*)$/);
+    if (regParts) {
+        return new RegExp(regParts[1], regParts[2]);
+    } else {
+        return new RegExp(re_str);
+    }
 }
 
 let body;
 if (typeof $argument == "undefined") {
-	console.log("requires $argument");
+    console.log("requires $argument");
 } else {
     if (typeof $response != "undefined") {
-		body = $response.body;
-	} else if (typeof $request != "undefined") {
-		body = $request.body;
-	} else {
-		console.log("script type error");
-	}
+        body = $response.body;
+    } else if (typeof $request != "undefined") {
+        body = $request.body;
+    } else {
+        console.log("script type error");
+    }
 }
 
 if (body) {
-	$argument.split("&").forEach((item) => {
-		let [match, replace] = item.split("->");
-		let re = getRegexp(match);
-		body = body.replace(re, replace);
-	});
-	$done({ body });
+    $argument.split("&").forEach((item) => {
+        let [match, replace] = item.split("->");
+        let re = getRegexp(match);
+        body = body.replace(re, replace);
+    });
+    $done({body});
 } else {
-	console.log("Not Modify");
-	$done({});
+    console.log("Not Modify");
+    $done({});
 }
