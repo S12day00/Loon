@@ -12,17 +12,17 @@ mb参数：每次测试消耗的流量，默认1MB，经测试最大可4MB参数
 可直接使用最基本的panel参数，title、icon、icon-color
 配置实例：titile=不想花里胡哨了&icon=hare&icon-color=#CDCDCD
 */
-const $ = new Env('network-speed')
-let arg
+const $ = new Env('network-speed');
+let arg;
 if (typeof $argument != 'undefined') {
     arg = Object.fromEntries($argument.split('&').map(item => item.split('=')));
 }
 (async () => {
-    const mb = $.lodash_get(arg, 'mb') || 10
-    const bytes = mb * 1024 * 1024
-    let up = {'url': 'https://speed.cloudflare.com/__up', timeout: 3000}
-    let down = {'url': `https://speed.cloudflare.com/__down?bytes=${bytes}`, timeout: 3000}
-    let cp = {'url': `https://speed.cloudflare.com/__up?bytes=${bytes}`, timeout: 3000}
+    const mb = $.lodash_get(arg, 'mb') || 10;
+    const bytes = mb * 1024 * 1024;
+    let up = {'url': 'https://speed.cloudflare.com/__up', timeout: 3000};
+    let down = {'url': `https://speed.cloudflare.com/__down?bytes=${bytes}`, timeout: 3000};
+    let cp = {'url': `https://speed.cloudflare.com/__up?bytes=${bytes}`, timeout: 3000};
     // 兼容性修正
     if ($.isLoon()) {
         up = ReRequest(up, $environment?.params?.node);
@@ -35,17 +35,17 @@ if (typeof $argument != 'undefined') {
     }
     console.log('down:' + JSON.stringify(down));
     // 下行速率测试
-    const Down_start = Date.now()
-    let __Down = await $.http.get(down)
-    const Down_end = Date.now()
-    const duration = (Down_end - Down_start) / 1000
-    const speed = mb / duration
-    const Ping_start = Date.now()
+    const Down_start = Date.now();
+    let __Down = await $.http.get(down);
+    const Down_end = Date.now();
+    const duration = (Down_end - Down_start) / 1000;
+    const speed = mb / duration;
+    const Ping_start = Date.now();
     //延时测试
-    let _Ping = await $.http.get(cp)
-    const pingt = Date.now() - Ping_start
-    const a = Diydecide(0, 50, 100, round(Math.abs(speed * 8)))
-    const b = Diydecide(0, 100, 200, pingt) + 3
+    let _Ping = await $.http.get(cp);
+    const pingt = Date.now() - Ping_start;
+    const a = Diydecide(0, 50, 100, round(Math.abs(speed * 8)));
+    const b = Diydecide(0, 100, 200, pingt) + 3;
     let shifts = {
         '1': arg?.iconslow,
         '2': arg?.iconmid,
@@ -53,13 +53,13 @@ if (typeof $argument != 'undefined') {
         '4': arg?.colorlow,
         '5': arg?.colormid,
         '6': arg?.colorhigh
-    }
-    icon = shifts[a]
-    color = shifts[b]
+    };
+    icon = shifts[a];
+    color = shifts[b];
     // 构造面板
     let Panel = {};
-    if ($.isStash()) Panel.title = arg?.title ?? "网速测试"
-    else Panel.title = arg?.title ?? "网速测试"
+    if ($.isStash()) Panel.title = arg?.title ?? "网速测试";
+    else Panel.title = arg?.title ?? "网速测试";
     if ($.isLoon()) {
         Panel.message = `------------------------------\n`
             + `下行速率：${round(Math.abs(speed * 8))}Mbps [${round(Math.abs(speed, 2), 1)}MB/s]\n`
@@ -86,23 +86,22 @@ if (typeof $argument != 'undefined') {
             + `测试用时：${round(Math.abs(duration, 2), 2)}s\n`
             + `测试时间：${new Date().toTimeString().split(' ')[0]}\n`
     }
-    ;
     $.log(JSON.stringify(Panel));
     $.done(Panel)
 })()
     .catch((e) => $.logErr(e))
-    .finally(() => $.done())
+    .finally(() => $.done());
 
 function createRound(methodName) {
-    const func = Math[methodName]
+    const func = Math[methodName];
     return (number, precision) => {
-        precision = precision == null ? 0 : precision >= 0 ? Math.min(precision, 292) : Math.max(precision, -292)
+        precision = precision == null ? 0 : precision >= 0 ? Math.min(precision, 292) : Math.max(precision, -292);
         if (precision) {
             // Shift with exponential notation to avoid floating-point issues.
             // See [MDN](https://mdn.io/round#Examples) for more details.
-            let pair = `${number}e`.split('e')
-            const value = func(`${pair[0]}e${+pair[1] + precision}`)
-            pair = `${value}e`.split('e')
+            let pair = `${number}e`.split('e');
+            const value = func(`${pair[0]}e${+pair[1] + precision}`);
+            pair = `${value}e`.split('e');
             return +`${pair[0]}e${+pair[1] - precision}`
 
         }
@@ -116,8 +115,8 @@ function round(...args) {
 
 //确定变量所在区间
 function Diydecide(x, y, z, item) {
-    let array = [x, y, z]
-    array.push(item)
+    let array = [x, y, z];
+    array.push(item);
     return array.sort((a, b) => a - b).findIndex(i => i === item)
 }
 
@@ -136,21 +135,18 @@ function ReRequest(request = {}, proxyName = "") {
             if (request.opts) request.opts.policy = proxyName;
             else request.opts = {"policy": proxyName};
         }
-        ;
         if ($.isSurge()) {
             delete request.id;
             request.headers["X-Surge-Policy"] = proxyName;
             request.policy = proxyName;
         }
-        ;
         if ($.isStash()) request.headers["X-Stash-Selected-Proxy"] = encodeURI(proxyName);
         if ($.isShadowrocket()) $.logErr(`❗️${$.name}, ${Fetch.name}执行失败`, `不支持的app: Shadowrocket`, "");
     }
     $.log(`🎉 ${$.name}, Construct Redirect Reqeusts`, "");
     //$.log(`🚧 ${$.name}, Construct Redirect Reqeusts`, `Request:${JSON.stringify(request)}`, "");
     return request;
-};
-
+}
 // prettier-ignore
 function Env(t, s) {
     class e {
