@@ -19,4 +19,4 @@ ads.forEach(function (adData) {
     adData.check_ad_views = "";
 });
 // console.log(data);
-$done({ body: JSON.stringify(data) });
+$done({body: JSON.stringify(data)});

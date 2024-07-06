@@ -48,7 +48,7 @@ if (cgiData.type === "gray" || cgiData.type === "newgray" || cgiData.type === "e
     if (/qr\.alipay/.test(trueURL)) {
         notify("", "点击跳转到支付宝打开", trueURL, alipayScheme + encodeURIComponent(trueURL));
         $done({});
-    }  else {
+    } else {
         if (trueURL.includes('https://spotify.link')) {
             const pattern = /\$full_url=([^&]+)/;
             trueURL = decodeURIComponent(trueURL).match(pattern)[1];
@@ -79,7 +79,7 @@ if (cgiData.type === "gray" || cgiData.type === "newgray" || cgiData.type === "e
             let obj = JSON.parse(resp.body);
             if (obj.hasOwnProperty("btns")) {
                 let trueURL = decodeURIComponent(/url=([A-Za-z0-9+/=]+)/.exec(obj.btns[0].url)[1]);
-                trueURL =Base64.decode(trueURL);
+                trueURL = Base64.decode(trueURL);
                 trueURL = trueURL.indexOf("http") == 0 ? trueURL : "http://" + trueURL;
                 if (!trueURL.includes("web.archive.org/web")) {
                     notify("", "点击跳转到浏览器打开", trueURL, trueURL);
@@ -145,13 +145,13 @@ function notify(title = "", subtitle = "", content = "", open_url) {
 
 function get(options) {
     if (isQuanX) {
-        if (typeof options == "string") options = { url: options, method: "GET" };
+        if (typeof options == "string") options = {url: options, method: "GET"};
         return $task.fetch(options);
     } else {
         return new Promise((resolve, reject) => {
             $httpClient.get(options, (err, response, body) => {
                 if (err) reject(err);
-                else resolve({ statusCode: response.status, headers: response.headers, body });
+                else resolve({statusCode: response.status, headers: response.headers, body});
             });
         });
     }
