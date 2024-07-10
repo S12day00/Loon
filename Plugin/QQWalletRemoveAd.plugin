@@ -20,4 +20,4 @@ DOMAIN-SUFFIX, gdt.qq.com, REJECT
 ^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getFootData\? reject-dict
 
 [Mitm]
-hostname = m.qianbao.qq.con
+hostname = m.qianbao.qq.com
