@@ -227,8 +227,8 @@ DOMAIN, ad.maoyan.com, REJECT
 ^https:\/\/passenger\.t3go\.cn\/passenger-activity-api\/notoken\/api\/v1\/resource\/getSource reject-dict
 
 # 携程旅行 m.ctrip.com
-# ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds reject-dict
-# ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent reject-dict
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds reject-dict
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent reject-dict
 
 # 猫眼电影
 # 弹窗广告+横幅广告 # 主机名ad.maoyan.com
