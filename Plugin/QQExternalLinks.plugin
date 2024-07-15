@@ -4,7 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/QQ.png
-#!date = 2024-06-30 22:04:00
+#!date = 2024-06-30 17:23:22
 
 [Rewrite]
 (^https:\/\/c\.pc\.qq\.com\/middlem\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2

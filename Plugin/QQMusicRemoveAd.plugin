@@ -4,7 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/QQMusic.png
-#!date = 2024-07-07 16:12:34
+#!date = 2024-07-07 15:31:22
 
 [Rule]
 DOMAIN, adstats.tencentmusic.com, REJECT

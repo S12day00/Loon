@@ -4,7 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/HTTPDNS.png
-#!date = 2024-07-10 18:06:26
+#!date = 2024-07-13 01:40:46
 
 [Rule]
 # 抖音
@@ -165,7 +165,8 @@ IP-CIDR, 118.89.204.198/23, REJECT, no-resolve
 IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve
 
 [Rewrite]
-^https?:\/\/119\.29\.29\.29\/d reject // 腾讯DNS
+# 腾讯DNS
+^https?:\/\/119\.29\.29\.29\/d reject
 
 [Mitm]
 hostname = 119.29.29.29
