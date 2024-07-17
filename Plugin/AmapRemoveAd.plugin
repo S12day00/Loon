@@ -4,7 +4,7 @@
 #!author = 不是山谷
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/Amap.png
-#!date = 2024-06-11 20:25:57
+#!date = 2024-07-17 10:51:16
 
 [Rule]
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT
