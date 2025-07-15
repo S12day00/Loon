@@ -4,17 +4,12 @@ DOMAIN-KEYWORD,normal-c-lq
 DOMAIN-KEYWORD,normal-lq
 DOMAIN-KEYWORD,search-quic-lq
 DOMAIN-KEYWORD,search-lq
-DOMAIN-SUFFIX,zijieapi.com,DIRECT
-DOMAIN-SUFFIX,ecombdapi.com,DIRECT
 DOMAIN-KEYWORD,-normal-hl
 DOMAIN-KEYWORD,-normal-c-hl
 DOMAIN-KEYWORD,-core-c-hl
 DOMAIN-KEYWORD,-normal-lf
 DOMAIN-KEYWORD,-normal-c-lf
 DOMAIN-KEYWORD,-core-c-lf
-# 登录
 DOMAIN,sso.douyin.com
-# Web版PC端
 DOMAIN,www.douyin.com
-# API域名
 DOMAIN-SUFFIX,snssdk.com
