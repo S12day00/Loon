@@ -5,10 +5,10 @@
 #!tag = 功能增强
 #!system =
 #!system_version =
-#!loon_version = 3.2.1(749)
+#!loon_version = 3.2.4(787)
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/Safari.png
-#!date = 2025-01-10 13:48:55
+#!date = 2025-07-20 13:03:43
 
 [Rewrite]
 # Safari内输入快捷键+空格+搜索关键词快速指定搜索引擎搜索
