@@ -22,12 +22,12 @@
 # gh = GitHub搜索
 # 无快捷键则默认使用Google搜索
 
-^https:\/\/www\.google\.com\/search\?q=gimg\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
-^https:\/\/www\.google\.com\/search\?q=b\+([^&]+).+ 302 https://www.bing.com/search?q==$1
-^https:\/\/www\.google\.com\/search\?q=bimg\+([^&]+).+ 302 https://www.bing.com/images/search?q=$1
-^https:\/\/www\.google\.com\/search\?q=wk\+([^&]+).+ 302 https://zh.wikipedia.org/wiki/$1
-^https:\/\/www\.google\.com\/search\?q=qm\+([^&]+).+ 302 https://www.qimai.cn/search/index/country/cn/search/$1
-^https:\/\/www\.google\.com\/search\?q=gh\+([^&]+).+ 302 https://github.com/search?q=$1
+^https:\/\/www\.google\.com\/search\?q=gimg\+([^&]+).+ 307 https://www.google.com/search?&tbm=isch&q=$1
+^https:\/\/www\.google\.com\/search\?q=b\+([^&]+).+ 307 https://www.bing.com/search?q==$1
+^https:\/\/www\.google\.com\/search\?q=bimg\+([^&]+).+ 307 https://www.bing.com/images/search?q=$1
+^https:\/\/www\.google\.com\/search\?q=wk\+([^&]+).+ 307 https://zh.wikipedia.org/wiki/$1
+^https:\/\/www\.google\.com\/search\?q=qm\+([^&]+).+ 307 https://www.qimai.cn/search/index/country/cn/search/$1
+^https:\/\/www\.google\.com\/search\?q=gh\+([^&]+).+ 307 https://github.com/search?q=$1
 
 [MitM]
 hostname = www.google.com
