@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/Safari.png
-#!date = 2025-07-23 13:12:11
+#!date = 2025-07-24 13:32:45
 
 [Rewrite]
 # Safari内输入快捷键+空格+搜索关键词快速指定搜索引擎搜索
@@ -22,12 +22,13 @@
 # gh = GitHub搜索
 # 无快捷键则默认使用Google搜索
 
-^https:\/\/www\.google\.com\/search\?q=gimg\+([^&]+).+ 307 https://www.google.com/search?&tbm=isch&q=$1
-^https:\/\/www\.google\.com\/search\?q=b\+([^&]+).+ 307 https://www.bing.com/search?q==$1
-^https:\/\/www\.google\.com\/search\?q=bimg\+([^&]+).+ 307 https://www.bing.com/images/search?q=$1
-^https:\/\/www\.google\.com\/search\?q=wk\+([^&]+).+ 307 https://zh.wikipedia.org/wiki/$1
-^https:\/\/www\.google\.com\/search\?q=qm\+([^&]+).+ 307 https://www.qimai.cn/search/index/country/cn/search/$1
-^https:\/\/www\.google\.com\/search\?q=gh\+([^&]+).+ 307 https://github.com/search?q=$1
+^https:\/\/www\.google\.cn\/search\?q=gimg\+([^&]+).+ 307 https://www.google.com/search?&tbm=isch&q=$1
+^https:\/\/www\.google\.cn\/search\?q=b\+([^&]+).+ 307 https://www.bing.com/search?q==$1
+^https:\/\/www\.google\.cn\/search\?q=bimg\+([^&]+).+ 307 https://www.bing.com/images/search?q=$1
+^https:\/\/www\.google\.cn\/search\?q=wk\+([^&]+).+ 307 https://zh.wikipedia.org/wiki/$1
+^https:\/\/www\.google\.cn\/search\?q=qm\+([^&]+).+ 307 https://www.qimai.cn/search/index/country/cn/search/$1
+^https:\/\/www\.google\.cn\/search\?q=gh\+([^&]+).+ 307 https://github.com/search?q=$1
+^https:\/\/www\.google\.cn\/search\?q=([^&]+).+ 307 https://www.google.com/search?q=$1
 
 [MitM]
-hostname = www.google.com
+hostname = www.google.cn
