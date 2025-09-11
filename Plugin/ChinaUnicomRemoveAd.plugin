@@ -1,5 +1,5 @@
 #!name = 中国联通去广告
-#!desc = 过滤中国联通应用的开屏广告
+#!desc = 过滤中国联通应用的开屏广告，移除主页浮窗、底部及搜索框推广
 #!openUrl =
 #!author = 就像风住了风又起[https://t.me/S12day00]
 #!tag = 去广告
@@ -8,14 +8,22 @@
 #!loon_version = 3.2.1(749)
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/ChinaUnicom.png
-#!date = 2024-06-02 14:20:29
+#!date = 2025-09-12 04:37:50
 
 [Rule]
-DOMAIN, smartad.10010.com, REJECT
-DOMAIN-SUFFIX, ad.10010.com, REJECT
+# 移除开屏广告
+DOMAIN,m1.ad.10010.com,REJECT
 
 [Rewrite]
+# 移除主页几个小按钮
+^https:\/\/m\.client\.10010\.com\/clientIndex\/v1\/api\/navHome response-body-json-jq '.datas.homeTopMenuItems |= map(select(.menuName != "通通" and .menuName != "签到"))'
+# 移除主页浮窗和底部推广
+^https:\/\/m\.client\.10010\.com\/clientIndex\/homefusion\/fuInter response-body-json-jq 'del(.["HomeFusion.fuchuangAdv_A8"], .["HomeFusion.bottomLabel"])'
+# 移除搜索框推广
+^https:\/\/m\.client\.10010\.com\/search_service\/tyfbSearch\/searchDiscoverListExpress response-body-json-jq '.data = []'
+^https:\/\/m\.client\.10010\.com\/search_service\/search\/searchScrollWord response-body-json-jq '.["113000004"] = []'
 
 [Script]
 
 [MitM]
+hostname= m.client.10010.com
