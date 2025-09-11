@@ -12,7 +12,7 @@
 
 [Rule]
 # 移除开屏广告
-DOMAIN,m1.ad.10010.com,REJECT
+DOMAIN, m1.ad.10010.com, REJECT
 
 [Rewrite]
 # 移除主页几个小按钮
@@ -26,4 +26,4 @@ DOMAIN,m1.ad.10010.com,REJECT
 [Script]
 
 [MitM]
-hostname= m.client.10010.com
+hostname = m.client.10010.com
