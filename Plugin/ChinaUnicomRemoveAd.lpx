@@ -1,6 +1,6 @@
 #!name = 中国联通去广告
 #!desc = 过滤中国联通应用的开屏广告，移除主页浮窗、底部及搜索框推广
-#!openUrl =
+#!openUrl = https://apps.apple.com/app/id416457422
 #!author = 就像风住了风又起[https://t.me/S12day00]
 #!tag = 去广告
 #!system =
