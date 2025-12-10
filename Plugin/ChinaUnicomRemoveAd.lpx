@@ -5,10 +5,10 @@
 #!tag = 去广告
 #!system =
 #!system_version =
-#!loon_version = 3.2.1(749)
+#!loon_version = 3.2.4(787)
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/ChinaUnicom.png
-#!date = 2025-09-12 04:37:50
+#!date = 2025-12-10 15:49:21
 
 [Rule]
 # 移除开屏广告
