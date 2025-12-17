@@ -1,5 +1,5 @@
 #!name = 酷狗概念版VIP签到
-#!desc = 每日凌晨0点10分自动签到领取畅听VIP，首次使用需打开酷狗概念版天天签到领VIP页面捕获Cookie，提示捕获成功即可。
+#!desc = 每日08:00自动签到领取畅听VIP，首次使用需打开酷狗概念版天天签到领VIP页面捕获Cookie，提示捕获成功即可。
 #!openUrl = https://apps.apple.com/app/id1480205582
 #!author = 就像风住了风又起[https://t.me/S12day00]
 #!tag = 功能增强
@@ -8,13 +8,13 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/KuGou.png
-#!date = 2025-12-11 14:05:36
+#!date = 2025-12-17 19:04:55
 
 [Argument]
 arg1 = switch, true, tag = 捕获Cookie
 
 [Script]
-cron "10 0 * * *" script-path = https://gist.githubusercontent.com/Alex0510/8b958bcf53ed1271e03bb5130b2206ec/raw/kugou_vip.js, timeout = 10, tag = VIP签到
+cron "0 8 * * *" script-path = https://gist.githubusercontent.com/Alex0510/8b958bcf53ed1271e03bb5130b2206ec/raw/kugou_vip.js, timeout = 10, tag = VIP签到
 http-request ^https://(gateway|gatewayretry|gateway3).kugou.com/youth/v1/activity/get_month_vip_record.* script-path = https://gist.githubusercontent.com/Alex0510/8b958bcf53ed1271e03bb5130b2206ec/raw/kugou_cookie.js, tag = 捕获Cookie, enable={arg1}
 
 [MITM]
