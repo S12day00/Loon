@@ -1,6 +1,6 @@
 #!name = 喜马拉雅解锁
 #!desc = 喜马拉雅解锁VIP、音效和音质等
-#!openUrl =
+#!openUrl = https://apps.apple.com/app/id876336838
 #!author = 就像风住了风又起[https://t.me/S12day00]
 #!tag = 功能增强
 #!system =
@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/Ximalaya.png
-#!date = 2026-01-05 02:05:28
+#!date = 2026-01-05 02:30:28
 
 [Script]
 http-response ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts|mobile\/user\/member|freeListenTabStyle).*$ script-path = https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js, requires-body = true, timeout = 60, tag = 喜马拉雅
