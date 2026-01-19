@@ -8,10 +8,10 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/S12day00/Loon
 #!icon = https://raw.githubusercontent.com/S12day00/Loon/main/Icon/App/Ximalaya.png
-#!date = 2026-01-20 02:30:28
+#!date = 2026-01-20 03:06:55
 
 [Script]
 http-response ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2\/homePage|product\/detail\/v1|v1\/album\/track\/ts|mobile-playpage\/track\/v4\/baseInfo\/ts) script-path = https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js, requires-body = true, timeout = 60, tag = 喜马拉雅解锁
 
 [MITM]
-hostname = *.ximalaya.com, *.xmcdn.com, passport.ximalaya.com
+hostname = *.ximalaya.com, *.xmcdn.com
